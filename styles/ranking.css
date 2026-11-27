@@ -13,9 +13,11 @@
 }
 
 .jogo-capa {
-    width: 300px;
+   width: 300px;
     height: auto;
     margin-left: 10px;
+
+    box-shadow: 10px 18px 20px 3px rgb(39, 38, 26);
 
 }
 
@@ -31,50 +33,114 @@
     font-family: "Cinzel Decorative", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: rgb(187, 144, 4);
     margin-left: 10px;
+    font-size: 20pt;
 }
 
 .jogo-topo {
     display: grid;
-    grid-template-columns: 340px 1fr;
+
+    grid-template-columns: 300px 400px minmax(0, 1fr);  
+
     align-items: start;
     gap: 28px;
-    margin-top: 10px;
-    margin-right: 500px;
+
+    margin-top: 20px;
 }
 
 .jogo-nota {
     width: fit-content;
     padding: 20px 35px;
-    margin: 0;
-    margin-top:10px ;
+    margin: 10px 0 0;
 
     background-color: aqua;
     border: 3px solid rgb(36, 68, 128);
     border-radius: 10px;
+
     font-size: 16pt;
     color: black;
-
+    
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 }
 
 .jogo-item-zelda {
     background-color: rgb(30, 51, 37);
-    border: 2px solid firebrick;
-    width: fit-content;
-    margin-right: 200px;
+
+    background-image: 
+        conic-gradient(from 160deg at 25% -15%,
+            transparent 0 4deg,
+            rgba(255,236,160, 0.14) 4deg 8deg,
+            transparent 8deg 15deg,
+            rgba(255,236,160, 0.11) 15deg 18deg,
+            transparent 18deg 25deg,
+            rgba(255,236,160,0.08) 26deg 28deg,
+            transparent 28deg),
+        /* musgo */
+        linear-gradient(0deg, rgba(80, 125, 45, 0.6), transparent 25%),
+        /* granulado */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.35 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+        /* blocos de pedra */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='80'%3E%3Crect x='0' y='0' width='80' height='40' fill='white' fill-opacity='0.05'/%3E%3Crect x='40' y='40' width='80' height='40' fill='white' fill-opacity='0.07'/%3E%3Cpath d='M1 2H79M81 2H159M41 42H119M121 42H160M0 42H39' stroke='white' stroke-opacity='0.08' stroke-width='2' fill='none'/%3E%3Cpath d='M0 0H160M0 40H160M0 80H160M0 0V40M80 0V40M40 40V80M120 40V80' stroke='%23091410' stroke-width='3' fill='none'/%3E%3C/svg%3E");
+
+    background-size: auto, auto, 200px 200px, 160px 80px;
+
+    box-shadow:
+        inset 0 0 55px rgba(0, 0, 0, 0.72),
+        0 10px 22px rgba(0, 0, 0, 0.6);
+
+    position: relative;
+    width: min(1260px, calc(100% - 20px));
+    box-sizing: border-box;
+
+    margin: 0 0 28px 0;
+    padding: 46px 56px 34px 56px;
 
     color: aliceblue;
-    
+}
+
+/* Moldura SVG de pedra, musgo e pilares aplicada 100% via CSS */
+.jogo-item-zelda::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 500' preserveAspectRatio='none'%3E%3Cdefs%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.065' numOctaves='4' seed='29' result='n'/%3E%3CfeColorMatrix type='matrix' values='0.25 0 0 0 0.14  0 0.28 0 0 0.15  0 0 0.18 0 0.08  0 0 0 0.55 0' in='n' result='c'/%3E%3CfeComposite operator='in' in='c' in2='SourceGraphic' result='t'/%3E%3CfeBlend mode='multiply' in='SourceGraphic' in2='t'/%3E%3C/filter%3E%3ClinearGradient id='topStone' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%23838a56'/%3E%3Cstop offset='25%25' stop-color='%2363683e'/%3E%3Cstop offset='78%25' stop-color='%23434729'/%3E%3Cstop offset='100%25' stop-color='%23252816'/%3E%3C/linearGradient%3E%3ClinearGradient id='mossGrad' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%237c9b38'/%3E%3Cstop offset='65%25' stop-color='%234f6922'/%3E%3Cstop offset='100%25' stop-color='%232e4012'/%3E%3C/linearGradient%3E%3ClinearGradient id='p' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0%25' stop-color='%234a4839'/%3E%3Cstop offset='32%25' stop-color='%237c775f'/%3E%3Cstop offset='72%25' stop-color='%235d5946'/%3E%3Cstop offset='100%25' stop-color='%232f2d22'/%3E%3C/linearGradient%3E%3ClinearGradient id='d' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%23e8c45a'/%3E%3Cstop offset='55%25' stop-color='%23b58b25'/%3E%3Cstop offset='100%25' stop-color='%23684c0f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='2' y='2' width='996' height='496' rx='4' fill='none' stroke='%2312160e' stroke-width='4'/%3E%3Cg filter='url(%23g)'%3E%3Crect x='14' y='5' width='972' height='28' fill='url(%23topStone)' stroke='%23181b10' stroke-width='2'/%3E%3Cpath d='M120,5 L124,33 M245,5 L242,21 L248,33 M755,5 L752,21 L758,33 M880,5 L876,33' stroke='%231b1e11' stroke-width='2.5' fill='none'/%3E%3Cpath d='M122,5 L126,33 M247,5 L244,21 L250,33 M757,5 L754,21 L760,33 M882,5 L878,33' stroke='%239aa16b' stroke-width='1' opacity='0.45' fill='none'/%3E%3Cline x1='14' y1='7' x2='986' y2='7' stroke='%23aeb579' stroke-width='1.5' opacity='0.55'/%3E%3Cline x1='14' y1='31' x2='986' y2='31' stroke='%2312140b' stroke-width='2'/%3E%3Cpath d='M36,6 C52,6 58,13 74,12 C88,11 96,19 112,17 C118,16 121,10 124,6 Z' fill='url(%23mossGrad)' opacity='0.88'/%3E%3Cpath d='M135,6 C152,7 166,15 186,12 C202,10 215,20 234,16 C240,15 243,9 246,6 Z' fill='url(%23mossGrad)' opacity='0.82'/%3E%3Cpath d='M260,6 C285,7 308,14 335,10 L335,6 Z' fill='url(%23mossGrad)' opacity='0.78'/%3E%3Cpath d='M665,6 C692,10 715,14 740,7 L740,6 Z' fill='url(%23mossGrad)' opacity='0.78'/%3E%3Cpath d='M756,6 C772,12 788,19 808,14 C828,9 846,16 868,8 L868,6 Z' fill='url(%23mossGrad)' opacity='0.85'/%3E%3Cpath d='M882,6 C898,14 916,18 936,12 C948,8 956,12 962,6 Z' fill='url(%23mossGrad)' opacity='0.88'/%3E%3Cpath d='M42,24 C56,22 68,28 84,26 C96,24 106,30 118,27 L118,32 L42,32 Z' fill='%233d5419' opacity='0.75'/%3E%3Cpath d='M882,27 C896,30 908,24 922,26 C936,28 946,23 958,25 L958,32 L882,32 Z' fill='%233d5419' opacity='0.75'/%3E%3C/g%3E%3Cg filter='url(%23g)'%3E%3Crect x='14' y='476' width='972' height='18' fill='%23464437' stroke='%23181912' stroke-width='2'/%3E%3Cline x1='14' y1='479' x2='986' y2='479' stroke='%237a7662' stroke-width='1.5' opacity='0.5'/%3E%3C/g%3E%3Cg filter='url(%23g)'%3E%3Crect x='4' y='4' width='38' height='24' rx='2' fill='url(%23p)' stroke='%231a1913' stroke-width='2'/%3E%3Crect x='8' y='28' width='30' height='444' fill='url(%23p)' stroke='%231a1913' stroke-width='2'/%3E%3Crect x='13' y='36' width='20' height='428' fill='%233a382d' stroke='%23858068' stroke-width='1'/%3E%3Cg stroke='%23968f73' stroke-width='1.4' fill='none' opacity='0.75'%3E%3Cpolygon points='23,55 30,75 23,95 16,75'/%3E%3Ccircle cx='23' cy='75' r='3'/%3E%3Cpath d='M17,115 L29,115 L23,130 Z'/%3E%3Crect x='17' y='150' width='12' height='24' rx='2'/%3E%3Cpolygon points='23,200 30,220 23,240 16,220'/%3E%3Cpath d='M17,265 L29,265 L23,280 Z'/%3E%3Crect x='17' y='300' width='12' height='24' rx='2'/%3E%3Cpolygon points='23,350 30,370 23,390 16,370'/%3E%3Cpath d='M17,415 L29,415 L23,435 Z'/%3E%3C/g%3E%3Crect x='4' y='472' width='38' height='24' rx='2' fill='url(%23p)' stroke='%231a1913' stroke-width='2'/%3E%3C/g%3E%3Cg filter='url(%23g)'%3E%3Crect x='958' y='4' width='38' height='24' rx='2' fill='url(%23p)' stroke='%231a1913' stroke-width='2'/%3E%3Crect x='962' y='28' width='30' height='444' fill='url(%23p)' stroke='%231a1913' stroke-width='2'/%3E%3Crect x='967' y='36' width='20' height='428' fill='%233a382d' stroke='%23858068' stroke-width='1'/%3E%3Cg stroke='%23968f73' stroke-width='1.4' fill='none' opacity='0.75'%3E%3Cpolygon points='977,55 984,75 977,95 970,75'/%3E%3Ccircle cx='977' cy='75' r='3'/%3E%3Cpath d='M971,115 L983,115 L977,130 Z'/%3E%3Crect x='971' y='150' width='12' height='24' rx='2'/%3E%3Cpolygon points='977,200 984,220 977,240 970,220'/%3E%3Cpath d='M971,265 L983,265 L977,280 Z'/%3E%3Crect x='971' y='300' width='12' height='24' rx='2'/%3E%3Cpolygon points='977,350 984,370 977,390 970,370'/%3E%3Cpath d='M971,415 L983,415 L977,435 Z'/%3E%3C/g%3E%3Crect x='958' y='472' width='38' height='24' rx='2' fill='url(%23p)' stroke='%231a1913' stroke-width='2'/%3E%3C/g%3E%3Cpath d='M330,5 L670,5 L652,31 L348,31 Z' fill='%23272a19' stroke='%2314160d' stroke-width='2'/%3E%3Cline x1='342' y1='11' x2='432' y2='11' stroke='url(%23d)' stroke-width='3'/%3E%3Cline x1='350' y1='21' x2='424' y2='21' stroke='url(%23d)' stroke-width='2.5'/%3E%3Cline x1='568' y1='11' x2='658' y2='11' stroke='url(%23d)' stroke-width='3'/%3E%3Cline x1='576' y1='21' x2='650' y2='21' stroke='url(%23d)' stroke-width='2.5'/%3E%3C/svg%3E");
+}
+
+/* Emblema da Triforce com asas centralizado no topo sem distorcer */
+.jogo-item-zelda::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 190px;
+    height: 58px;
+    pointer-events: none;
+    z-index: 3;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.75));
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 54'%3E%3Cdefs%3E%3ClinearGradient id='t' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%23f7dc79'/%3E%3Cstop offset='55%25' stop-color='%23c99b2e'/%3E%3Cstop offset='100%25' stop-color='%237c5b12'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpolygon points='20,4 160,4 144,44 36,44' fill='%232b2d1f' stroke='%2312140c' stroke-width='2.5'/%3E%3Cpolygon points='30,13 68,13 62,20 36,20' fill='url(%23t)' stroke='%232b1f06' stroke-width='1'/%3E%3Cpolygon points='39,24 64,24 59,31 44,31' fill='url(%23t)' stroke='%232b1f06' stroke-width='1'/%3E%3Cpolygon points='150,13 112,13 118,20 144,20' fill='url(%23t)' stroke='%232b1f06' stroke-width='1'/%3E%3Cpolygon points='141,24 116,24 121,31 136,31' fill='url(%23t)' stroke='%232b1f06' stroke-width='1'/%3E%3Cpolygon points='90,8 100,24 80,24' fill='url(%23t)' stroke='%232b1f06' stroke-width='1.2'/%3E%3Cpolygon points='80,24 90,40 70,40' fill='url(%23t)' stroke='%232b1f06' stroke-width='1.2'/%3E%3Cpolygon points='100,24 110,40 90,40' fill='url(%23t)' stroke='%232b1f06' stroke-width='1.2'/%3E%3C/svg%3E");
+}
+
+
+.jogo-resumo {
+    min-width: 0;
 }
 
 .jogo-curiosidades {
-    margin:0;
-    margin-top: 10px;
-    font-size: 10pt;
-    
-}
+    margin: 28px 0 0;
+    padding-left: 18px;
+    border-left: 4px solid rgb(187, 144, 4);
 
+    font-size: 14pt;
+    line-height: 1.6;
+
+}
 
 .jogo-impacto {
     margin-top: 20px;
@@ -84,5 +150,84 @@
     font-size: 14.5pt;
 }
 
+.jogo-item-zelda .jogo-topo {
+    position: relative;
+}
 
+.jogo-item-zelda .jogo-topo::before {
+    content: "";
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: center;
+    align-self: center;
 
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(255, 224, 102, 0.22) 0%,
+        rgba(212, 165, 32, 0.08) 45%,
+        transparent 70%
+    );
+
+    opacity: 0.45;
+    transform: scale(0.9);
+    transition: opacity 0.4s ease, transform 0.5s ease;
+    pointer-events:  none;
+
+}
+
+.jogo-item-zelda .jogo-topo::after {
+   content: "";
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: center;
+    align-self: center;
+
+    width: 190px;
+    height: 165px;
+    cursor: pointer;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 174'%3E%3Cdefs%3E%3ClinearGradient id='goldLight' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23fff1a8'/%3E%3Cstop offset='45%25' stop-color='%23e5b73b'/%3E%3Cstop offset='100%25' stop-color='%238c6211'/%3E%3C/linearGradient%3E%3ClinearGradient id='goldBevel' x1='0' y1='1' x2='0' y2='0'%3E%3Cstop offset='0%25' stop-color='%236b4809'/%3E%3Cstop offset='100%25' stop-color='%23fce373'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg stroke='%233d2904' stroke-width='2.2' stroke-linejoin='round'%3E%3Cpolygon points='100,6 146,86 54,86' fill='url(%23goldLight)'/%3E%3Cpolygon points='100,16 136,80 64,80' fill='none' stroke='url(%23goldBevel)' stroke-width='1.5' opacity='0.75'/%3E%3Cpolygon points='54,86 100,166 8,166' fill='url(%23goldLight)'/%3E%3Cpolygon points='54,96 90,160 18,160' fill='none' stroke='url(%23goldBevel)' stroke-width='1.5' opacity='0.75'/%3E%3Cpolygon points='146,86 192,166 100,166' fill='url(%23goldLight)'/%3E%3Cpolygon points='146,96 182,160 110,160' fill='none' stroke='url(%23goldBevel)' stroke-width='1.5' opacity='0.75'/%3E%3C/g%3E%3C/svg%3E");
+
+    filter: drop-shadow(0 10px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 8px rgba(235, 190, 55, 0.3));
+    animation: triforce-flutuar 3.8s ease-in-out infinite;
+    transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), filter 0.4s ease;
+}
+
+/* Interação ao passar o mouse */
+.jogo-item-zelda .jogo-topo:has(::after:hover)::before,
+.jogo-item-zelda .jogo-topo:hover::before {
+    opacity: 1;
+    transform: scale(1.18);
+}
+
+.jogo-item-zelda .jogo-topo::after::hover {
+    animation-play-state: paused;
+    transform: translateY(-6px) scale(1.1) rotateY(180deg);
+    filter:
+        drop-shadow(0 14px 18px rgba(0, 0, 0, 0.8))
+        drop-shadow(0 0 22px rgba(255, 223, 95, 0.9))
+        brightness(1.18);
+}
+
+/* Pulso extra ao clicar */
+.jogo-item-zelda .jogo-topo::after:active {
+    transform: scale(0.97) rotateY(360deg);
+    filter:
+        drop-shadow(0 0 32px rgba(255, 240, 150, 1))
+        brightness(1.35);
+}
+
+@keyframes triforce-flutuar {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-9px);
+    }
+}
