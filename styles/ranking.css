@@ -1,0 +1,45 @@
+
+ /* Cabeçalho */
+
+.ranking-secao  {
+    background-color: rgb(219, 238, 231);
+}
+
+.ranking-titulo {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 32pt;
+    color: blue;
+}
+
+.jogo-capa {
+    width: 250px;
+    height: auto;
+
+}
+
+ /* 1: Ocarina of Time */
+ 
+.jogo-item #jogo-ocarina-of-time h3 {
+    font-family: "Cinzel Decorative", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(187, 144, 4);
+}
+
+.jogo-topo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.jogo-nota {
+    width: fit-content;
+    padding: 30px 40px;
+    margin: 0;
+
+    background-color: aqua;
+    border: 1px solid cornflowerblue;
+    border-radius: 10px;
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
