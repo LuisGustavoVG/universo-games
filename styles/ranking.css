@@ -231,3 +231,185 @@
         transform: translateY(-9px);
     }
 }
+
+
+/*----------- Super Mario World -------------- */
+
+.jogo-item-mariow {
+    font-family: "Fredoka", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 13pt;
+
+    background-color: #6ab4f5;
+    background-image:
+        /* sol */
+        radial-gradient(circle at 14% 12%, rgba(255, 252, 210, 0.55), transparent 34%),
+        /* moitas e arbustos */
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 220'%3E%3Cg stroke='%2316421b' stroke-width='3' stroke-linejoin='round'%3E%3Cpath d='M70,210 C70,175 110,175 110,210 Z' fill='%2339a841'/%3E%3Cpath d='M102,210 C102,165 150,165 150,210 Z' fill='%234cc452'/%3E%3Cpath d='M520,210 C520,172 565,172 565,210 Z' fill='%2339a841'/%3E%3Cpath d='M558,210 C558,162 605,162 605,210 Z' fill='%234cc452'/%3E%3Cpath d='M760,210 C760,176 798,176 798,210 Z' fill='%234cc452'/%3E%3C/g%3E%3C/svg%3E"),
+        /* céu */
+        linear-gradient(180deg, #4b8fe2 0%, #7ec0f7 68%, #b3defc 100%);
+
+    background-size: auto, 900px 220px, 100% 100%;
+    background-repeat: no-repeat, repeat-x, no-repeat;
+    background-position: center, bottom left, center;
+
+    border: 4px solid #2b7a34;
+    border-radius: 10px;
+    box-shadow:
+        inset 0 0 0 3px rgba(255, 255, 255, 0.3),
+        0 8px 20px rgba(0, 0, 0, 0.35);
+
+    position: relative;
+    overflow: hidden;
+    width: min(1260px, calc(100% - 20px));
+    box-sizing: border-box;
+
+    margin: 0 0 28px 0;
+    padding: 46px 36px 105px 36px;
+
+    color: aliceblue;
+}
+
+.jogo-item-mariow .jogo-capa {
+    width: 300px;
+    height: auto;
+    margin-left: 10px;
+
+    box-shadow: 10px 18px 20px 3px rgb(38, 71, 114);
+}
+
+.jogo-titulo-mariow {
+    font-family: "Fredoka", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20pt;
+    margin: 0 0 0 10px;
+
+    text-shadow: 2px 2px 0 #000,
+                -1px -1px 0 #1b1919,
+                 1px -1px 0 #000,
+                -1px 1px 0 #000;
+}
+
+.jogo-titulo-mariow .vermelho { color: #e52521; }
+.jogo-titulo-mariow .azul     { color: #0b6fd6; }
+.jogo-titulo-mariow .amarelo  { color: #fbd000; }
+.jogo-titulo-mariow .verde    { color: #43b047; }
+
+.jogo-item-mariow .jogo-topo {
+    display: grid;
+    grid-template-columns: 300px 400px minmax(0, 1fr);
+    align-items: start;
+    gap: 28px;
+    margin-top: 20px;
+}
+
+.jogo-item-mariow .jogo-nota {
+    width: fit-content;
+    padding: 16px 28px;
+    margin: 0;
+
+    background-color: #fbd000;
+    border: 3px solid #244480;
+    border-radius: 10px;
+    box-shadow: 0 4px 0 #1b3361;
+
+    font-size: 16pt;
+    font-weight: 700;
+    color: #152238;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.jogo-item-mariow .jogo-curiosidades {
+    margin: 22px 0 0;
+    padding: 14px 18px;
+    border-left: 4px solid rgb(27, 175, 54);
+    border-radius: 0 8px 8px 0;
+    background-color: rgba(15, 36, 72, 0.58);
+
+    font-size: 14pt;
+    line-height: 1.6;
+}
+
+.jogo-item-mariow .jogo-impacto {
+    margin: 24px 0 0 10px;
+    padding: 14px 18px;
+    border-left: 4px solid #fbd000;
+    border-radius: 0 8px 8px 0;
+    background-color: rgba(15, 36, 72, 0.62);
+
+    text-align: left;
+    font-size: 14.5pt;
+    line-height: 1.6;
+}
+
+.jogo-item-mariow article {
+    position: relative;
+    z-index: 1;
+}
+
+/* Colinas */
+.jogo-item-mariow::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 152px;
+    pointer-events: none;
+    z-index: 0;
+
+    background-repeat: repeat-x;
+    background-size: 640px 156px;
+    background-position: bottom left;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 156'%3E%3Cdefs%3E%3ClinearGradient id='hillGrad' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0%25' stop-color='%2358c953'/%3E%3Cstop offset='55%25' stop-color='%233ca83b'/%3E%3Cstop offset='100%25' stop-color='%23267d29'/%3E%3C/linearGradient%3E%3ClinearGradient id='dirtGrad' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%23c98744'/%3E%3Cstop offset='100%25' stop-color='%238c5423'/%3E%3C/linearGradient%3E%3C/defs%3E%3C!-- Morro médio (esquerda) --%3E%3Cg stroke='%23153d19' stroke-width='3'%3E%3Cpath d='M32,128 C32,48 122,48 122,128 Z' fill='url(%23hillGrad)'/%3E%3Cline x1='69' y1='78' x2='69' y2='93' stroke='%23153d19' stroke-width='2.6' stroke-linecap='round'/%3E%3Cline x1='85' y1='78' x2='85' y2='93' stroke='%23153d19' stroke-width='2.6' stroke-linecap='round'/%3E%3C/g%3E%3C!-- Morro alto (centro) --%3E%3Cg stroke='%23153d19' stroke-width='3'%3E%3Cpath d='M235,128 C235,14 355,14 355,128 Z' fill='url(%23hillGrad)'/%3E%3Cline x1='284' y1='58' x2='284' y2='76' stroke='%23153d19' stroke-width='2.8' stroke-linecap='round'/%3E%3Cline x1='306' y1='58' x2='306' y2='76' stroke='%23153d19' stroke-width='2.8' stroke-linecap='round'/%3E%3C/g%3E%3C!-- Morro mais baixo (direita) --%3E%3Cg stroke='%23153d19' stroke-width='3'%3E%3Cpath d='M485,128 C485,68 560,68 560,128 Z' fill='url(%23hillGrad)'/%3E%3Cline x1='514' y1='92' x2='514' y2='105' stroke='%23153d19' stroke-width='2.5' stroke-linecap='round'/%3E%3Cline x1='528' y1='92' x2='528' y2='105' stroke='%23153d19' stroke-width='2.5' stroke-linecap='round'/%3E%3C/g%3E%3C!-- Cercas de madeira --%3E%3Cg fill='%23c47d3b' stroke='%233d210a' stroke-width='2.5'%3E%3Cpath d='M152,128 L152,102 L160,96 L168,102 L168,128 Z'/%3E%3Cpath d='M174,128 L174,102 L182,96 L190,102 L190,128 Z'/%3E%3Cpath d='M196,128 L196,102 L204,96 L212,102 L212,128 Z'/%3E%3C/g%3E%3C!-- Faixa contínua de grama e terra sem emenda --%3E%3Crect x='-2' y='124' width='644' height='11' fill='%2347b842' stroke='%23153d19' stroke-width='2.5'/%3E%3Crect x='-2' y='135' width='644' height='21' fill='url(%23dirtGrad)' stroke='%233d210a' stroke-width='2.5'/%3E%3C/svg%3E");
+}
+    /* Nuvens */
+.jogo-item-mariow::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 60px; /* para antes das colinas */
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    z-index: 0;
+
+    background-repeat: repeat-x;
+    background-size: 900px 500px;
+    background-position: 0 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 500'%3E%3Cdefs%3E%3Cg id='n'%3E%3Cpath d='M70,95 C45,95 45,65 72,65 C75,40 115,35 125,58 C140,40 175,50 172,75 C195,78 192,95 172,95 Z' fill='white' stroke='%23a9c8ec' stroke-width='3'/%3E%3Cellipse cx='105' cy='76' rx='4' ry='8' fill='%23222'/%3E%3Cellipse cx='130' cy='76' rx='4' ry='8' fill='%23222'/%3E%3C/g%3E%3C/defs%3E%3Cuse href='%23n' transform='translate(20 0)'/%3E%3Cuse href='%23n' transform='translate(340 -10) scale(0.8)'/%3E%3Cuse href='%23n' transform='translate(600 30) scale(1.1)'/%3E%3Cuse href='%23n' transform='translate(160 200) scale(0.9)'/%3E%3Cuse href='%23n' transform='translate(560 190) scale(1.2)'/%3E%3Cuse href='%23n' transform='translate(740 300) scale(0.8)'/%3E%3C/svg%3E");
+
+    animation: nuvens-mariow 90s linear infinite;
+}
+
+@keyframes nuvens-mariow {
+    from { background-position: 0 0; }
+    to   { background-position: 900px 0; }
+}
+
+.koopa-voador {
+    position: absolute;
+    top: 120px;
+    left: -80px;
+    width: 60px;
+    image-rendering: pixelated; /* mantém os pixels nítidos */
+    pointer-events: none;
+    z-index: 0;
+
+    animation: koopa-voar 25s linear infinite;
+}
+
+@keyframes koopa-voar {
+    from { left: -80px; }
+    to   { left: 100%; }
+}
+
+.koopa2 {
+    top: 220px;
+    animation-delay: -8s;
+}
+
+.koopa3 {
+    top: 300px;
+    animation-delay: -20s;
+}
